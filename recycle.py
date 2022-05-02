@@ -1,5 +1,9 @@
 ## Ruins of Chaos Recycle Calculator ##
 
+### TODO: Programmatically display weapon type ###
+### TODO: Implement input validation and exception handling ###
+### TODO: Convert to JavaScript for GUI programming ###
+
 ## Example Calculation: 
 # SoV: 101104137750
 # Max AAT: (SoV * 0.002) -> (101104137750 * 0.002)
@@ -68,19 +72,39 @@ def weapon_cost(num):
     if num == 11 or num == 14:
         return 300000
 
-
+## Total SoV 
 sov = int(input("Enter Sell Off Value (SoV) here: "))
 print("SoV:", sov)
+## Number of Spies Enemy Sent
 num_spies = int(input("# of spies enemy sabber used (1-25): "))
 print("# of spies:", num_spies)
 pct_aat = float(calc_aat_percent(int(num_spies)))
+## AAT Multiplier
 print("% AAT:", pct_aat)
-in_type = int(input("Input weapon category (SA/DA/SP/SE): "))
+in_type = int(input("Input weapon type: "))
 wpn_mult = float(weapon_type(in_type))
+## Weapons Type Multiplier
+# SA: 1.0, DA: 0.8, SP: 0.8, SE: 0.6
 print("Weapon Type Multiplier: ", wpn_mult)
+## Number of Successes
 in_success = int(input("# successes: "))
 print("The enemy sabber succeeded", in_success, "times.")
-in_cost = int(input("Input weapon name (1 - 14): "))
+## Weapon Cost Enum
+# 1 = Dagger
+# 2 = Maul 
+# 3 = Blade 
+# 4 = Excalibur 
+# 5 = Sai 
+# 6 = Shield 
+# 7 = Mithril 
+# 8 = Dragonskin 
+# 9 = Cloak 
+# 10 = Hook 
+# 11 = Pickaxe 
+# 12 = Horn 
+# 13 = Guard Dog 
+# 14 = Torch
+in_cost = int(input("Input weapon cost: "))
 wpn_cost = int(weapon_cost(in_cost))
 print("Weapon costs", wpn_cost, "gold")
 result = (((((sov * 0.002) * pct_aat) * wpn_mult) * in_success) / wpn_cost)
