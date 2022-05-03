@@ -3,6 +3,7 @@
 ### TODO: Programmatically display weapon type ###
 ### TODO: Implement input validation and exception handling ###
 ### TODO: Convert to JavaScript for GUI programming ###
+### TODO: Design wireframe for GUI ###
 
 ## Example Calculation: 
 # SoV: 101104137750
